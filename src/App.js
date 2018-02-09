@@ -8,9 +8,9 @@ class App extends Component {
   render() {
     return (
       <main>
+
         <Router>
           <div>
-
             <Route exact path="/" component={Home} />
 
             <nav>
@@ -19,10 +19,11 @@ class App extends Component {
                 <li><Link to="/example1">Example1</Link></li>
               </ul>
             </nav>
-            
+
             <Route path="/example1" component={Example} />
           </div>
         </Router>
+
       </main>
     );
   }
