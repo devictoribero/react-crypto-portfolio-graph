@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+import Navigator from './components/Navigator';
+
 import Home from './scenes/Home';
 import Example from './scenes/Example';
+
 
 class App extends Component {
   render() {
@@ -13,12 +16,10 @@ class App extends Component {
           <div>
             <Route exact path="/" component={Home} />
 
-            <nav>
-              <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/example1">Example1</Link></li>
-              </ul>
-            </nav>
+            <Navigator>
+              <Link to="/">Home</Link>
+              <Link to="/example1">Example1</Link>
+            </Navigator>
 
             <Route path="/example1" component={Example} />
           </div>

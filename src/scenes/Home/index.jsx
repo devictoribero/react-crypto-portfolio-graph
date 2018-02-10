@@ -1,32 +1,29 @@
 import React, { Component } from 'react';
 import glamorous from 'glamorous';
 
+import StyleUtilsService from '../../services/StylesUtilsService'
+
 import HeroSection from '../../components/HeroSection/index';
 import H1 from '../../components/Heading/Heading1';
 import H2 from '../../components/Heading/Heading2';
 
 
-const Home = () => {
-  const _heroImage = 'https://images7.alphacoders.com/411/thumb-1920-411820.jpg';
-  const bg1 = '#085078';
-  const bg2 = '#85D8CE';
-  const backgroundGradient = `linear-gradient(90deg, ${bg1}, ${bg2})`
+const Home = props => {
+  const color1 = '#085078';
+  const color2 = '#85D8CE';
+  console.log(this.children);
   return (
     <main>
       <HeroSection
-        background = {_heroImage}
-        backgroundGradient={backgroundGradient}
-        >
+        backgroundGradient={StyleUtilsService.gradient({color1, color2})} >
         <H1
           color = 'white'
           textAlign = 'center'
-          text = 'This repo permits you te create graphs customly in a hot way' />
-
+          text = 'HOT GRAPHS REACTJS' />
         <H2
           color = 'white'
           textAlign = 'center'
           text = 'Enjoy your generator!' />
-
       </HeroSection>
     </main>
   );
