@@ -1,7 +1,7 @@
-let _self;
+let _this;
 
-_self = {
-  something: () => console.log('something'),
+_this = {
+  perform: () => console.log('invoking crypto data service '),
 };
 
-export default _self;
+export default _this;

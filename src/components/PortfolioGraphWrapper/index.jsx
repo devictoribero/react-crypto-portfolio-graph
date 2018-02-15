@@ -14,18 +14,13 @@ class PortfolioGraphWrapper extends Component {
   }
 
   componentWillMount() {
-    console.log("will mount");
-    const data = this.props.cryptoDataProvider.__invoke();
-    console.log(data);
+    this.fetchAndRenderCryptosPortfolio(this.props.portfolio);
   }
 
-  componentDidMount() {
-    setTimeout(()=> {
-      this.setState({
-        loading: false,
-        data: 'this is the data',
-      });
-    }, 2000);
+  fetchAndRenderCryptosPortfolio = portfolio => {
+    this.props.cryptoDataProvider
+      .getData(this.props.portfolio)
+      .then(dataFetched => console.log(dataFetched.data));
   }
 
   render() {

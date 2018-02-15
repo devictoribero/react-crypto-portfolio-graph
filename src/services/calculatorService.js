@@ -1,7 +1,7 @@
-let _self;
+let _this;
 
-_self = {
+_this = {
   something: () => console.log('something'),
 };
 
-export default _self;
+export default _this;

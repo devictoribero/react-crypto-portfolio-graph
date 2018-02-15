@@ -1,7 +1,7 @@
 import React, {Fragment } from 'react';
 
 import initializer from '../../initializers/initializer';
-import cryptoDataProvider from '../../Provider/cryptoDataProvider';
+import cryptoDataProvider from '../../providers/cryptoDataProvider';
 import stylesUtilsService from '../../services/stylesUtilsService';
 import cryptoDataService from '../../services/cryptoDataService';
 import calculatorService from '../../services/calculatorService';
