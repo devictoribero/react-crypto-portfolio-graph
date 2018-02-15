@@ -3,15 +3,15 @@ import glamorous from 'glamorous';
 
 import StyleUtilsService from '../../services/StylesUtilsService'
 
-import HeroSection from '../../components/HeroSection/index';
+import HeroSection from '../../components/HeroSection';
 import H1 from '../../components/Heading/Heading1';
-import H2 from '../../components/Heading/Heading2';
+import H3 from '../../components/Heading/Heading3';
 
 
 const Home = props => {
   const color1 = '#085078';
   const color2 = '#85D8CE';
-  console.log(this.children);
+
   return (
     <main>
       <HeroSection
@@ -20,10 +20,11 @@ const Home = props => {
           color = 'white'
           textAlign = 'center'
           text = 'HOT GRAPHS REACTJS' />
-        <H2
+        <H3
           color = 'white'
           textAlign = 'center'
-          text = 'Enjoy your generator!' />
+          text = 'Enjoy your generator!'
+          margin = '20px 0 0 0' />
       </HeroSection>
     </main>
   );

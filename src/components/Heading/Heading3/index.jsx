@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import glamorous from 'glamorous';
 
-const Heading2 = glamorous.h2({
+const Heading3 = glamorous.h3({
   margin: 0,
   padding: 0,
   color: '#141414',
   fontFamily: 'Lato, Sans-serif',
-  fontSize: '32px',
+  fontSize: '22px',
   fontWeight: 'bold',
   textAlign: 'left'
 },
@@ -17,12 +17,12 @@ const Heading2 = glamorous.h2({
 );
 
 
-const H2 = (props) =>
-  <Heading2
+const H3 = (props) =>
+  <Heading3
     color       = {props.color}
     fontFamily  = {props.fontFamily}
     textAlign   = {props.textAlign}
     margin      = {props.margin}
-  > {props.text} </Heading2>;
+  > {props.text} </Heading3>;
 
-export default H2;
+export default H3;

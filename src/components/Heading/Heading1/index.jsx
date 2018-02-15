@@ -13,6 +13,7 @@ const Heading1 = glamorous.h1({
   ({color})       => ({ color: color }),
   ({fontFamily})  => ({ fontFamily: fontFamily }),
   ({textAlign})   => ({ textAlign: textAlign }),
+  ({margin})      => ({ margin: margin }),
 );
 
 
@@ -21,6 +22,7 @@ const H1 = (props) =>
     color       = {props.color}
     fontFamily  = {props.fontFamily}
     textAlign   = {props.textAlign}
+    margin      = {props.margin}
   > {props.text} </Heading1>;
 
 export default H1;

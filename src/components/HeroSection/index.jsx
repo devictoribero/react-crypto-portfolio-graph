@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import glamorous from 'glamorous';
 
 const HeroContainer = glamorous.section({
-  padding: '50px 30px',
+  padding: '100px 30px',
   margin: 0,
   '@media(min-width: 768px)': {
     padding: '150px 75px',

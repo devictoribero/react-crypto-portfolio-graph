@@ -2,20 +2,30 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import glamorous from 'glamorous';
 
+const NavigatorContainer = glamorous.ul({
+  display: 'flex',
+  justifyContent: 'center',
+  padding: '20px',
+});
+
+const LinkElement = glamorous.li({
+  listStyle: 'none',
+  margin: 'auto 10px',
+});
 
 const Navigator = (props) => {
   const links = props.children.map((child, index) => {
-    const url_child = `/${child.props.children}`;
-    return <li key = {index}>
+    const url_child = child.props.to;
+    return <LinkElement key = {index}>
         <Link to = {url_child}>
           {child.props.children}
         </Link>
-      </li>
+      </LinkElement>
   });
 
   return(
     <nav>
-      <ul>{links}</ul>
+      <NavigatorContainer>{links}</NavigatorContainer>
     </nav>
   );
 };
