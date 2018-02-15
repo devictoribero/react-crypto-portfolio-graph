@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import glamorous from 'glamorous';
+import React from 'react';
 
 import stylesUtilsService from '../../services/stylesUtilsService'
 

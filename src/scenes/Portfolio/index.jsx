@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import glamorous from 'glamorous';
+import React, {Fragment } from 'react';
 
 import initializer from '../../initializers/initializer';
 import cryptoDataProvider from '../../Provider/cryptoDataProvider';

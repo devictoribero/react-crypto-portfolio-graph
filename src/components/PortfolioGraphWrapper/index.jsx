@@ -1,29 +1,39 @@
 import React, { Component } from 'react';
-import glamorous from 'glamorous';
 
 import PortfolioGraph from '../PortfolioGraph';
+import Loading from '../../components/Loading';
 
 
 class PortfolioGraphWrapper extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
       portfolio: this.props.portfolio,
     };
-    console.log(this.state);
   }
 
   componentWillMount() {
     console.log("will mount");
+    const data = this.props.cryptoDataProvider.__invoke();
+    console.log(data);
   }
 
   componentDidMount() {
-    console.log("did mount");
+    setTimeout(()=> {
+      this.setState({
+        loading: false,
+        data: 'this is the data',
+      });
+    }, 2000);
   }
 
   render() {
     return (
-      <div></div>
+      <React.Fragment>
+        { this.state.loading && <Loading /> }
+        { !this.state.loading && <PortfolioGraph data ={this.state.data} /> }
+      </React.Fragment>
     );
   }
 };
