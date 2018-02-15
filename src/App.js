@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Navigator from './components/Navigator';
 
 import Home from './scenes/Home';
-import Example from './scenes/Example';
+import Portfolio from './scenes/Portfolio';
 
 
 class App extends Component {
@@ -18,10 +18,10 @@ class App extends Component {
 
             <Navigator>
               <Link to="/">Home</Link>
-              <Link to="/example1">Example1</Link>
+              <Link to="/portfolio">Portfolio</Link>
             </Navigator>
 
-            <Route path="/example1" component={Example} />
+            <Route path="/portfolio" component={Portfolio} />
           </div>
         </Router>
 
