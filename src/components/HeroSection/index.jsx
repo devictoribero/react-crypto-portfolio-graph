@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import glamorous from 'glamorous';
 
 const HeroContainer = glamorous.section({

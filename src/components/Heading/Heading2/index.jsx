@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import glamorous from 'glamorous';
 
 const Heading2 = glamorous.h2({

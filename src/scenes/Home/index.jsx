@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import glamorous from 'glamorous';
 
-import StylesUtilsService from '../../services/StylesUtilsService'
+import stylesUtilsService from '../../services/stylesUtilsService'
 
 import HeroSection from '../../components/HeroSection';
 import H1 from '../../components/Heading/Heading1';
@@ -15,7 +15,7 @@ const Home = props => {
   return (
     <main>
       <HeroSection
-        backgroundGradient={StylesUtilsService.gradient({color1, color2})} >
+        backgroundGradient={stylesUtilsService.gradient({color1, color2})} >
         <H1
           color = 'white'
           textAlign = 'center'
