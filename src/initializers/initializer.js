@@ -3,19 +3,20 @@ const initializer = {
   portfolio: [
     {
       name: 'Ethereum',
+      iso: 'ETH',
+      buy_orders: [],
+      time: 'timestamptime',
+      amount_coins: 5000,
+    },
+    {
+      name: 'Bitcoin',
       iso: 'BTC',
       time: 'timestamptime',
       amount_coins: 5000,
     },
     {
-      name: 'Ethereum',
-      iso: 'BTC',
-      time: 'timestamptime',
-      amount_coins: 5000,
-    },
-    {
-      name: 'Ethereum',
-      iso: 'BTC',
+      name: 'Ripple',
+      iso: 'XRP',
       time: 'timestamptime',
       amount_coins: 5000,
     },

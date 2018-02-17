@@ -1,10 +1,8 @@
 import React, {Fragment } from 'react';
 
 import initializer from '../../initializers/initializer';
-import cryptoDataProvider from '../../providers/cryptoDataProvider';
-import stylesUtilsService from '../../services/stylesUtilsService';
-import cryptoDataService from '../../services/cryptoDataService';
-import calculatorService from '../../services/calculatorService';
+import PortfolioDataGiver from '../../services/PortfolioDataGiver';
+import StylesUtils from '../../services/StylesUtils';
 
 import HeroSection from '../../components/HeroSection';
 import H1 from '../../components/Heading/Heading1';
@@ -19,7 +17,7 @@ const Portfolio = (props) => {
   return (
     <Fragment>
       <HeroSection
-        backgroundGradient={stylesUtilsService.gradient({ color1, color2 })} >
+        backgroundGradient={StylesUtils.gradient({ color1, color2 })} >
         <H1
           color = 'white'
           textAlign = 'center'
@@ -32,9 +30,7 @@ const Portfolio = (props) => {
       </HeroSection>
       <PortfolioGraphWrapper
         portfolio={initializer.portfolio}
-        cryptoDataProvider={cryptoDataProvider}
-        cryptoDataService={cryptoDataService}
-        calculatorService={calculatorService}
+        PortfolioDataGiver={PortfolioDataGiver}
       />
     </Fragment>
   );

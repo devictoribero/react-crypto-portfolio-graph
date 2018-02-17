@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import glamorous from 'glamorous';
+import React from 'react';
+import {PieChart} from 'react-easy-chart';
 
 const PortfolioGraph = (props) => {
+
   return (
-    <div>TIME TO SHOW THE DATA</div>
+    <PieChart labels data={props.data} />
   );
 };
 
