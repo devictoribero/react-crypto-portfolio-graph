@@ -4,7 +4,6 @@ const initializer = {
     {
       name: 'Ethereum',
       iso: 'ETH',
-      buy_orders: [],
       time: 'timestamptime',
       amount_coins: 5000,
     },

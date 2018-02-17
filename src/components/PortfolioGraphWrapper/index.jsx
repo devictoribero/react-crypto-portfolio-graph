@@ -16,22 +16,22 @@ class PortfolioGraphWrapper extends Component {
   }
 
   getPortfolioDataAndRender = portfolio => {
-    const portfolioData = this.props.PortfolioDataGiver.getPorfolioInfo(this.props.portfolio);
-    // const chartOptions = options;
-
+    const chartData = this.props.PortfolioDataGiver.getPorfolioData(this.props.portfolio);
+    
     const chartData_1 = [
       { key: 'A', value: 100, color: '#aaac84' },
       { key: 'B', value: 200, color: '#dce7c5' },
       { key: 'C', value: 50, color: '#e3a51a' }
     ];
 
-    const chartOptions_1 = [];
-
     this.setState({
       isLoading: false,
       chartData: chartData_1,
       chartOptions: chartOptions_1,
     });
+
+    const chartOptions_1 = [];
+
   }
 
   constructor(props) {
