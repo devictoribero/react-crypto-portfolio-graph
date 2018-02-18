@@ -1,10 +1,20 @@
+import NotCryptocurrencyOnTimeInstanceException
+from '../exceptions/NotCryptocurrencyOnTimeInstanceException';
+
 const CalculatorOfPriceVariation = () => {
+
   execute: (cryptocurrencyOnTime, currentCryptocurrencyOnTime) => {
-    const priceVariation = currentCryptocurrencyOnTime / cryptocurrencyOnTime;
+    if (cryptocurrencyOnTime instanceof CryptocurrencyOnTime ||
+        currentCryptocurrencyOnTime instanceof CryptocurrencyOnTime)
+    {
+      const priceVariation = currentCryptocurrencyOnTime / cryptocurrencyOnTime;
 
-    Math.round(priceVariation * 100) / 100;
+      Math.round(priceVariation * 100) / 100;
 
-    return percent;
+      return percent;
+    }
+
+    throw new NotCryptocurrencyOnTimeInstanceException();
   }
 };
 
