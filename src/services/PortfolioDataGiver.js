@@ -4,11 +4,11 @@ import CreateHistoricDataStructureFromAdapter from './CreateHistoricDataStructur
 const PortfolioDataGiver = {
 
   getPorfolioData: portfolio => {
-    // Here will be the exact data needed to print the GraphComponent
+    // Exact data that the ChartComponent needs
     let portfolioData = [];
 
-    return portfolio.map(crypto =>
-      CryptoCurrentPriceStructure.createStructure(crypto)
+    return portfolio.map(coin =>
+      CryptoCurrentPriceStructure.createStructure(coin).then(result => console.log(result))
     );
   },
 };

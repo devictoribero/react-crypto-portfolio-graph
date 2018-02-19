@@ -1,4 +1,4 @@
-export class Cryptocurrency {
+export default class Cryptocurrency {
   constructor({ name, iso }) {
     this.name = name;
     this.iso = iso;

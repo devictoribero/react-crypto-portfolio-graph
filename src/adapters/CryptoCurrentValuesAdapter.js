@@ -1,18 +1,45 @@
-const CryptoCurrentValuesAdapter = {
+import Cryptocurrency from '../application/classes/Cryptocurrency';
+import CryptocurrencyOnTime from '../application/classes/CryptocurrencyOnTime';
+import CryptocurrencyPosition from '../application/classes/CryptocurrencyPosition';
+import Portfolio from '../application/classes/Portfolio';
 
-  adaptData: (currentDataFromAPI, crypto) => {
-    return {
-      name: crypto.name,
-      iso: crypto.iso,
-      amount: crypto.amount_coins,
-      time: crypto.time,
-      values: {
-        current: {
-          btc: currentDataFromAPI.data.BTC,
-          eur: currentDataFromAPI.data.EUR,
-        },
-      },
-    };
+import UtilsService from '../services/UtilsService';
+
+const CryptoCurrentValuesAdapter = {
+  adaptData: (currentDataFromAPI) => {
+    const queryStringInJson = UtilsService.queryStringToJSON(
+      currentDataFromAPI.request.responseURL
+    );
+
+    const {
+      ts: timestamp,
+      cryptocurrency: crypto_name,
+      iso: iso,
+      amount
+    } = queryStringInJson;
+
+    const cryptocurrency = new Cryptocurrency({
+      name: crypto_name,
+      iso: iso,
+    });
+
+    const cryptocurrencyOnTime = new CryptocurrencyOnTime({
+      cryptocurrency,
+      timestamp,
+      value: {
+        bitcoin: currentDataFromAPI.data[queryStringInJson.iso].BTC,
+        dollar: currentDataFromAPI.data[queryStringInJson.iso].USD,
+        euro: currentDataFromAPI.data[queryStringInJson.iso].EUR,
+      }
+    });
+
+    const cryptocurrencyPosition = new CryptocurrencyPosition({
+      cryptocurrencyOnTime,
+      amount,
+    });
+
+
+    return cryptocurrencyPosition;
   },
 };
 
