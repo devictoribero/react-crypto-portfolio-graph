@@ -1,5 +1,13 @@
+import CryptocurrencyOnTime from './CryptocurrencyOnTime';
+import NotCryptocurrencyOnTimeInstanceException
+  from '../exceptions/NotCryptocurrencyOnTimeInstanceException';
+
 export default class CryptocurrencyPosition {
-  constructor({ cryptocurrencyOnTime, amount }) {
+  constructor({ cryptocurrencyOnTime, amount }){
+    if (!cryptocurrencyOnTime instanceof CryptocurrencyOnTime) {
+      throw new NotCryptocurrencyOnTimeInstanceException();
+    }
+
     this.cryptocurrencyOnTime = cryptocurrencyOnTime;
     this.amount = amount;
   }

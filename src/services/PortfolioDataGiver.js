@@ -8,7 +8,7 @@ const PortfolioDataGiver = {
     let portfolioData = [];
 
     return portfolio.map(coin =>
-      CryptoCurrentPriceStructure.createStructure(coin).then(result => console.log(result))
+      CryptoCurrentPriceStructure.createStructure(coin)
     );
   },
 };

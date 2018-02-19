@@ -1,5 +1,13 @@
+import Cryptocurrency from "./Cryptocurrency";
+import NotCryptocurrencyInstanceException
+  from '../exceptions/NotCryptocurrencyInstanceException';
+
 export default class CryptocurrencyOnTime {
   constructor({ cryptocurrency, timestamp, value }) {
+    if (!cryptocurrency instanceof Cryptocurrency) {
+      throw new NotCryptocurrencyInstanceException();
+    }
+
     this.cryptocurrency = cryptocurrency;
     this.time = timestamp;
     this.value = {

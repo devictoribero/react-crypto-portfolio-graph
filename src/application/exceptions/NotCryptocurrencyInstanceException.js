@@ -5,7 +5,7 @@ class NotCryptocurrencyOnTimeInstanceException
 extends DefaultException {
   constructor() {
     super();
-    this.errorCode = 'NOT_CRYPTOCURRENCY_ON_TIME_INSTANCE';
-    this.message = 'The parameter given is not a CRYPTOCURRENCY_ON_TIME.';
+    this.errorCode = 'NOT_CRYPTOCURRENCY_INSTANCE';
+    this.message = 'The parameter given is not a CryptoCurrency.';
   }
 }
